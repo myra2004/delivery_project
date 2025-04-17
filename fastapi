@@ -1,0 +1,58 @@
+pip install sqlalchemy sqlalchemy-utils psycopg2-binary
+
+echo=True - sql statementlarni consoleda kursatib turish uchun, asosan development uchun ishlatiladi
+expires_time=variable - token qandaydir vaqtdan kn expire bb ketadi, yani avtomat tarzda token ishlame qoladi
+
+create_engine - database obyektini hosil qilish uchun , bu funksiya
+
+declarative_base, sessionmaker - database module va database sessionlarni yaratish uchun ishlatiladi
+
+engine = create_engine('postgresql://muqaddas:2004@localhost:5432/delivery_db')
+create_engine('postgresql://USERNAME:PASSWORD@HOSTNAME:PORT/DB_NAME')
+yani biz postgresqlni egasi, uning passwordi, localhosti va unga tegishli portni import qivomiz, va qaysi databaseda malummot saqlanishini kursatish uchun dbni kiritvomiz
+
+
+
+PASSWORDNI SHIFRLASH
+agar prosto kodni saqlasa, security buyicha unga zarar yetkazish mumkin, shuning uchun uni hash lab, shifrlab saqlimiz
+bunda bcrypt modelidan foydalanamiz
+
+pip install werkzeug  --> packageni install qilamiz
+
+
+
+TABLE LARNI KURINMIDI
+CHUNKI PYTHONDA YOZGAN TABLE LARNI MIGRATSIYA QIMADI
+migratsiya uchun 'init_db.py' ochamiz
+
+
+--->
+"""
+pydantic modeli
+umumiy sign up modeli uchun schema yoki data struktura desak buladi
+
+class config  - pydanticni configration qismi hisoblanadi. sign up modelini uzgartirish imkonini beradi
+
+orm  mode ni yoqadi - user malumotini kiritdi, orm mode true busa, pydantic bu holatda malumot validatsiyadan utadi, true busa sqlalchemyga ugurib beradi, va databasega yoziladi
+
+"""
+
+--> jwt_required() - valid access tokenni talab qiladi
+
+--> get_jwt_subject()  - access tokendan usename ni ajratib oladi
+
+--> create_access_token()  - access token yaratishga
+
+---> Authorize.jwt_refresh_token_required() - aftorizatsiya uchun refresh token suridi
+
+
+
+
+----> ORDER
+
+
+
+
+exclude_unset ---> update qilayotganimizda qisman qilmoqchi bulib ketsak True qilib ketish kere buladi
+
+
